@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "318590805801",
+    "firebase_url": "https://saving-1c98b.firebaseio.com",
+    "project_id": "saving-1c98b",
+    "storage_bucket": "saving-1c98b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:318590805801:android:3527fb289fb0e4df",
+        "android_client_info": {
+          "package_name": "com.sample.saving"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "318590805801-1vovuc9onhdri9rv7u6g8s39fcllqnq1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACbaJq5kxPSnEPh4lAyLtRkN4XtMDWr_E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
