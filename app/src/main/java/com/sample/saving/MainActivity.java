@@ -5,8 +5,11 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
+import android.text.Html;
 import android.text.SpannableStringBuilder;
 import android.text.TextWatcher;
+import android.text.method.LinkMovementMethod;
+import android.text.method.MovementMethod;
 import android.util.Log;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -28,6 +31,13 @@ public class MainActivity extends AppCompatActivity implements TextWatcher {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        TextView privacy = (TextView)findViewById(R.id.privacypolicy) ;
+        MovementMethod mMethod = LinkMovementMethod.getInstance();
+        privacy.setMovementMethod(mMethod);
+        CharSequence link = Html.fromHtml("<a href=\"" + "https://komugiapp.blogspot.com/2018/09/blog-post.html" + "\">Application Privacy Policy</a>");
+        privacy.setText(link);
 
         kekka = (TextView) findViewById(R.id.kekka);
         bikou = (TextView) findViewById(R.id.bikou);
@@ -84,7 +94,7 @@ public class MainActivity extends AppCompatActivity implements TextWatcher {
         //saving.setText(String.valueOf(key_saving));
         //income.setText(String.valueOf(key_income));
 
-        //MobileAds.initialize(getApplicationContext(), "");
+        MobileAds.initialize(getApplicationContext(), "ca-app-pub-6789227322694215~2084399888");
         AdView mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
