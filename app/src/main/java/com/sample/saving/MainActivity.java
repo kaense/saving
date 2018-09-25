@@ -1,6 +1,8 @@
 package com.sample.saving;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +13,10 @@ import android.text.TextWatcher;
 import android.text.method.LinkMovementMethod;
 import android.text.method.MovementMethod;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -33,11 +39,11 @@ public class MainActivity extends AppCompatActivity implements TextWatcher {
         setContentView(R.layout.activity_main);
 
 
-        TextView privacy = (TextView)findViewById(R.id.privacypolicy) ;
-        MovementMethod mMethod = LinkMovementMethod.getInstance();
-        privacy.setMovementMethod(mMethod);
-        CharSequence link = Html.fromHtml("<a href=\"" + "https://komugiapp.blogspot.com/2018/09/blog-post.html" + "\">Application Privacy Policy</a>");
-        privacy.setText(link);
+        //TextView privacy = (TextView)findViewById(R.id.privacypolicy) ;
+        //MovementMethod mMethod = LinkMovementMethod.getInstance();
+        //privacy.setMovementMethod(mMethod);
+        //CharSequence link = Html.fromHtml("<a href=\"" + "https://komugiapp.blogspot.com/2018/09/blog-post.html" + "\">Application Privacy Policy</a>");
+        //privacy.setText(link);
 
         kekka = (TextView) findViewById(R.id.kekka);
         bikou = (TextView) findViewById(R.id.bikou);
@@ -100,6 +106,34 @@ public class MainActivity extends AppCompatActivity implements TextWatcher {
         mAdView.loadAd(adRequest);
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int itemId = item.getItemId();
+        switch (itemId){
+            case R.id.privacyPolicy:
+                //Intent intent = new Intent(MainActivity.this, SubActivity.class);
+                //startActivity(intent);
+                //setContentView(R.layout.activity_webview);
+                //WebView web = (WebView)findViewById(R.id.webview_id);
+                // httpクライアントを設定
+                //web.setWebViewClient(new WebViewClient());
+                //web.loadUrl("https://komugiapp.blogspot.com/2018/09/blog-post.html");
+                Uri uri = Uri.parse("https://komugiapp.blogspot.com/2018/09/blog-post.html");
+                Intent i = new Intent(Intent.ACTION_VIEW,uri);
+                startActivity(i);
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 
     @Override
     public void beforeTextChanged(CharSequence s, int start, int count, int after) {

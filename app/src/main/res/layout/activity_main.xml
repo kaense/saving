@@ -176,66 +176,7 @@
             android:textColor="@android:color/black"
             android:textSize="15sp" />
     </LinearLayout>
+
     </LinearLayout>
-    <TextView
-        android:id="@+id/privacypolicy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:text="Application Privacy Policy" />
-
-
-    <!--
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="2sp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-     -->
-
-    <!--
-     </LinearLayout>
-     -->
-    <!--
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/chokuzen_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="直前の結果"
-            android:textColor="@android:color/black"
-            android:textSize="15sp"/>
-        <TextView
-            android:id="@+id/before_kekka"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:id="@+id/before_target"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:id="@+id/before_saving"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:id="@+id/before_income"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-    -->
-    <!--
-    </LinearLayout>
-    -->
-
 
 </RelativeLayout>

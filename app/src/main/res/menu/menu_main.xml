@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.sample.memo_simple.MainActivity">
+    <item
+        android:id="@+id/privacyPolicy"
+        android:orderInCategory="100"
+        android:title="プライバシーポリシー"
+        app:showAsAction="never" />
+    <!--<TextView
+        android:id="@+id/privacyPolicy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="Application Privacy Policy" />-->
+
+
+
+</menu>
