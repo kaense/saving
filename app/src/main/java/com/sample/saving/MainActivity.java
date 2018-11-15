@@ -1,5 +1,6 @@
 package com.sample.saving;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -15,9 +16,12 @@ import android.text.method.MovementMethod;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.inputmethod.InputMethodManager;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.gms.ads.AdRequest;
@@ -32,6 +36,8 @@ public class MainActivity extends AppCompatActivity implements TextWatcher {
     static protected SharedPreferences.Editor editor;
     static protected float key_target, key_saving, key_income;
 
+    InputMethodManager inputMethodManager;
+    LinearLayout activity_main;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -105,6 +111,24 @@ public class MainActivity extends AppCompatActivity implements TextWatcher {
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
+
+        //画面全体のレイアウト
+        activity_main = (LinearLayout)findViewById(R.id.activity_main);
+        //キーボード表示を制御するためのオブジェクト
+        inputMethodManager = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+    }
+
+    /**
+     * EditText編集時に背景をタップしたらキーボードを閉じるようにするタッチイベントの処理
+     */
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        //キーボードを隠す
+        inputMethodManager.hideSoftInputFromWindow(activity_main.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+        //背景にフォーカスを移す
+        activity_main.requestFocus();
+
+        return false;
     }
 
     @Override
